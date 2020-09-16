@@ -1,0 +1,61 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: grey;
+}
+
+.viewer {
+    width: 800px;
+    height: 700px;
+}
+
+.viewer-header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgrey;
+}
+
+.back-btn {
+    width: 200px;
+}
+
+.title-span {
+    width: 400px;
+    font-family: "Microsoft YaHei UI";
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.other-header {
+    width: 200px;
+}
+
+.viewer-body {
+    background-color: white;
+    width: 100%;
+    height: 640px;
+    margin-top: 10px;
+}
+
+.controller {
+    width: 450px;
+    height: 700px;
+    background-color: lightgrey;
+}
