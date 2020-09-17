@@ -25,7 +25,7 @@ body {
     align-items: center;
     width: 1100px;
     height: 600px;
-    background-color: rgba(255,255,255,0.7);
+    /*background-color: rgba(255,255,255,0.7);*/
 }
 
 .label {
@@ -34,7 +34,7 @@ body {
 
 #title {
     font-size: 60px;
-    color: blue;
+    color: orange;
     margin-top: 100px;
 }
 
