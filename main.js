@@ -1,8 +1,9 @@
 const { app, BrowserWindow, Menu } = require('electron')
 
+var win = null
 function createWindow () {
     // 创建浏览器窗口
-    const win = new BrowserWindow({
+        win = new BrowserWindow({
         width: 1280,
         height: 760,
         webPreferences: {
@@ -41,7 +42,12 @@ app.on('activate', () => {
 
 // 修改菜单栏
 Menu.setApplicationMenu(Menu.buildFromTemplate([
-    {
+    {   
+        label: '首页',
+        click() {
+            win.loadFile('html/index.html')
+        },
+    },{
         label: '帮助',
         click: function () {
             let help = new BrowserWindow({

@@ -21,21 +21,28 @@
 <body>
 
 <div class="container">
-    <div class="viewer">
-        <div class="viewer-header">
-            <div class="back-btn">
-                <button class="mdui-btn mdui-color-grey-0 mdui-ripple back-button">
-                                        <i class="mdui-icon material-icons">&#xe5c4;</i>
-                    返回
-                </button>
-            </div>
-            <span class="title-span">高能电子通量模拟预测</span>
-            <div class="other-header"></div>
+    <div class="header mdui-shadow-5">
+        <div class="back-btn">
+        <button class="mdui-btn mdui-color-theme-100 mdui-ripple back-button">
+            <i class="mdui-icon material-icons">&#xe5c4;</i>
+            返回
+        </button>
         </div>
-        <div class="viewer-body">视图区域</div>
+    <span class="title-span ">电子通量模拟测试</span>
+    <div class="other-header"></div>
     </div>
-    <div class="controller">
-        控制区域
+    <div class='main-body'>
+        <div class="viewer">
+            <div class="viewer-body" id='box'>pic</div>
+        </div>
+        <div class="controller">
+            <div class="input-div mdui-shadow-5">输入参数</div>
+            <div class="run-div mdui-shadow-5">程序运行部分</div>
+            <div class="output-div mdui-shadow-5">
+                <!-- <button class="mdui-btn mdui-color-blue-100" id='btn-plot'>plot</button>
+                <button class="mdui-btn mdui-color-blue-100" id='btn-flash'>flash</button> -->
+            </div>  
+        </div>
     </div>
 </div>
 

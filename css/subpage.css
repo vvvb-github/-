@@ -30,37 +30,42 @@ body {
 
 .label {
     font-family: "Microsoft YaHei UI";
+    font-weight: bold;
 }
 
 #title {
     font-size: 60px;
-    color: orange;
+    color: Azure;
     margin-top: 100px;
 }
 
 #system {
-    margin-top: 100px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    height: 250px;
+    height: 400px;
+    width: 600px;
+    border-radius: 30px;
+    background-size: 100%;
 }
 
 .system-div {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .system-img {
-    width: 100px;
-    height: 50px;
+    width: 150px;
+    height: 75px;
     margin-right: 10px;
 }
 
-.mdui-btn {
-    width: 200px;
+.mdui-btn-raised {
+    width: 250px;
+    height: 50px;
 }
-
-
