@@ -4,7 +4,7 @@
 - [Node.js](https://nodejs.org/en/download/) \
 官网下载安装
 - [electron](https://www.electronjs.org/docs) \
-`npm install --save-dev electron`
+npm安装
 
 ### 参考资料
 - [mdui](https://www.mdui.org/docs/introduction) \
@@ -14,5 +14,11 @@
 - [flex布局](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool) \
 CSS3原生，无需引入
 
+### 安装依赖
+- `npm install`
+
 ### 运行
 - `npm start`
+
+### 打包
+- `npm run dist`
