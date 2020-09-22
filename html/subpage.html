@@ -13,11 +13,18 @@
 </head>
 <body>
 
-<div id="menu">
-    <button class="mdui-btn mdui-color-grey-300 menu-btn" id="menu-index">首页</button>
-    <button class="mdui-btn mdui-color-grey-300 menu-btn" id="menu-help">帮助</button>
+<div class="head">
+    <span style="font-size: 15px;font-weight: bold;margin-left: 5px">辐射带高能电子通量预报技术及其应用</span>
+    <div class="btn-head-div">
+        <button class="mdui-btn mdui-btn-icon btn-head" id="minimize"><i class="mdui-icon material-icons">remove</i></button>
+        <button class="mdui-btn mdui-btn-icon btn-head" id="close"><i class="mdui-icon material-icons">close</i></button>
+    </div>
 </div>
-            
+
+<div class="menu">
+    <button class="mdui-btn mdui-color-grey-300 menu-btn" id="menu-index"><span class="menu-text">首页</span></button>
+    <button class="mdui-btn mdui-color-grey-300 menu-btn" id="menu-help"><span class="menu-text">帮助</span></button>
+</div>
 
 <div class="container">
     <div class="card">
@@ -27,15 +34,23 @@
         <div id="system">
             <div class="system-div">
                 <img class="system-img" src="../assets/1.jpg"/>
-                <button class="mdui-btn btn3 mdui-color-grey-400 mdui-ripple mdui-shadow-5" id="subsystem1-btn">高能电子和合声波观测分析</button>
+                <button class="mdui-btn btn3 mdui-color-grey-400 mdui-ripple mdui-shadow-5" id="subsystem1-btn">
+                    <span class="btn-text">高能电子和合声波观测分析</span>
+                </button>
             </div>
             <div class="system-div">
                 <img class="system-img" src="../assets/2.jpg"/>
-                <button class="mdui-btn btn3 mdui-color-grey-400 mdui-ripple mdui-shadow-5" id="subsystem2-btn">合声波传播特性分析</button>
+                <button class="mdui-btn btn3 mdui-color-grey-400 mdui-ripple mdui-shadow-5" id="subsystem2-btn">
+                    <span class="btn-text">合声波传播特性分析</span>
+                </button>
             </div>
             <div class="system-div">
                 <img class="system-img" src="../assets/3.jpg"/>
-                <button class="mdui-btn btn3 mdui-color-grey-400 mdui-ripple mdui-shadow-5" id="subsystem3-btn">高能电子通量模拟预测</button>
+                <button class="mdui-btn btn3 mdui-color-grey-400 mdui-ripple mdui-shadow-5" id="subsystem3-btn">
+                    <span class="btn-text">
+                        高能电子通量模拟预测
+                    </span>
+                </button>
             </div>
         </div>
     </div>

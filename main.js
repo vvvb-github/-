@@ -1,22 +1,25 @@
 const { app, BrowserWindow, Menu } = require('electron')
 const ipc = require('electron').ipcMain
 
+let win
+
 function createWindow () {
     // 创建浏览器窗口
-        const win = new BrowserWindow({
+    win = new BrowserWindow({
         width: 1280,
         height: 780,
         webPreferences: {
             nodeIntegration: true
         },
-        resizable: false
+        resizable: false,
+        frame: false
     })
 
     // 并且为你的应用加载index.html
     win.loadFile('html/index.html')
 
     // 打开开发者工具
-    win.webContents.openDevTools()
+    // win.webContents.openDevTools()
 }
 
 // Electron会在初始化完成并且准备好创建浏览器窗口时调用这个方法
@@ -53,6 +56,14 @@ ipc.on('Help', ()=>{
     help.on('close',()=>{
         help = null
     })
+})
+
+ipc.on('Exit', ()=>{
+    app.quit()
+})
+
+ipc.on('Min', ()=>{
+    win.minimize()
 })
 
 // 修改菜单栏

@@ -9,4 +9,12 @@ $(function () {
     $('#menu-help').click(()=>{
         ipc.send('Help')
     })
+
+    $('#close').click(()=>{
+        ipc.send('Exit')
+    })
+
+    $('#minimize').click(()=>{
+        ipc.send('Min')
+    })
 })
