@@ -1,9 +1,9 @@
 const { app, BrowserWindow, Menu } = require('electron')
+const ipc = require('electron').ipcMain
 
-var win = null
 function createWindow () {
     // 创建浏览器窗口
-        win = new BrowserWindow({
+        const win = new BrowserWindow({
         width: 1280,
         height: 760,
         webPreferences: {
@@ -40,29 +40,45 @@ app.on('activate', () => {
     }
 })
 
-// 修改菜单栏
-Menu.setApplicationMenu(Menu.buildFromTemplate([
-    {   
-        label: '首页',
-        click() {
-            win.loadFile('html/index.html')
-        },
-    },{
-        label: '帮助',
-        click: function () {
-            let help = new BrowserWindow({
-                width: 800,
-                height: 450,
-                frame: true,
-                fullscreen: false,
-                resizable: false,
-            })
+ipc.on('Help', ()=>{
+    let help = new BrowserWindow({
+        width: 800,
+        height: 450,
+        frame: true,
+        fullscreen: false,
+        resizable: false,
+    })
 
-            help.loadFile('html/help.html');
-            help.on('close',()=>{
-                help = null
-            })
-            // Menu.setApplicationMenu(null)
-        }
-    }
-]))
+    help.loadFile('html/help.html');
+    help.on('close',()=>{
+        help = null
+    })
+})
+
+// 修改菜单栏
+Menu.setApplicationMenu(null)
+// Menu.setApplicationMenu(Menu.buildFromTemplate([
+//     {
+//         label: '首页',
+//         click() {
+//             win.loadFile('html/index.html')
+//         },
+//     },{
+//         label: '帮助',
+//         click: function () {
+//             let help = new BrowserWindow({
+//                 width: 800,
+//                 height: 450,
+//                 frame: true,
+//                 fullscreen: false,
+//                 resizable: false,
+//             })
+//
+//             help.loadFile('html/help.html');
+//             help.on('close',()=>{
+//                 help = null
+//             })
+//             // Menu.setApplicationMenu(null)
+//         }
+//     }
+// ]))
