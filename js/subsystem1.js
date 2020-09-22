@@ -1,18 +1,13 @@
 $(function () {
     $('.back-button').click(()=>{
         window.location.href = 'subpage.html'
-  
     })
-})
-
-$(function () {
     $('#btn-plot').click(()=>{
-      $('#box').html("<img class='plot-img' src='../assets/plot.jpg'></img>");
-    })
-})
+        $('#box').html("<img class='plot-img' src='../assets/plot.jpg'></img>");
+      })
 
-$(function () {
     $('#btn-flash').click(()=>{
-        $('#box').html("<img class='plot-img' src='../assets/flash.jpg'></img>");
+        $('#box').html("<video id='video' class='plot-img' autoplay loop src='../assets/flash.mp4' type='video/mp4'></video> ");  
+        document.getElementById("video").playbackRate=5;
     })
 })
