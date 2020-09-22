@@ -5,7 +5,7 @@ function createWindow () {
     // 创建浏览器窗口
         const win = new BrowserWindow({
         width: 1280,
-        height: 760,
+        height: 780,
         webPreferences: {
             nodeIntegration: true
         },
