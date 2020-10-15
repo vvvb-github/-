@@ -56,3 +56,9 @@ body {
 .menu-text {
     font-size: 13px;
 }
+
+
+.drag {
+    width: 95%;
+    -webkit-app-region: drag;
+}
