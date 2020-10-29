@@ -10,9 +10,9 @@ body {
 
 .container {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     background-color:rgb(232, 239, 248);
 }
 
@@ -23,30 +23,44 @@ body {
     align-items: center;
     justify-content: flex-start;
     background-image: linear-gradient(#1253a8, #8396be);
-    border-bottom:5px solid rgb(180, 180, 180)
+    /* border-bottom:5px solid rgb(180, 180, 180) */
 }
-.main-body {
+.main-body1 {
     width: 100%;
-    height: 92%;
+    height: 87%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color:#e4e3e3 ;
 }
 
+.main-body {
+    width: 100%;
+    height: 92%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color:#e4e3e3 ;
+}
+
 .viewer {
     width: 68%;
-    height: 600px;
+    /* height: 600px; */
+    display: flex;
+    justify-content: center;
+
    
 }
 
 .back-btn {
-    width: 200px;
+    width: 20%;
 }
 
 .plot-img {
-    width: 100%;
-    height: 100%;
+    width: auto;  
+    height: auto;  
+    max-width: 100%;  
+    max-height: 600px; 
 }
 
 .title-span {
@@ -59,7 +73,7 @@ body {
 }
 
 .other-header {
-    width: 200px;
+    width: 20%;
 }
 
 .viewer-body {
@@ -108,6 +122,7 @@ body {
     height: 29%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     background-color: rgb(232, 242, 252);
     /* border:2px solid rgb(68, 123, 177) */
@@ -126,6 +141,9 @@ body {
     /* border-bottom:5px solid rgb(121 157 222); */
     background-color:#6fa2a2;
 }
+.fuhao {
+    padding-left:10px;
+}
 
 .parameter-div {
     width: 70%;
@@ -134,7 +152,7 @@ body {
     align-items: center;
     flex-direction: column;
     background-color: rgb(250, 250, 250);
-    border-radius: 10px;
+    /* border-radius: 10px; */
     padding-bottom: 10px;
 }
 
@@ -168,8 +186,9 @@ body {
     /* border:2px solid rgb(68, 123, 177) */
 }
 
+
 .ctr-tip {
-    width: 120px;
+    width: 110px;
     text-align: left;
     margin-left: 30px;
     /* margin-right: 30px; */ 
@@ -177,19 +196,19 @@ body {
 
 .param {
     width: 90px;
-    height: 100%;
+    height: 60%;
     text-align: center;
-    padding-left: 25px !important;
-    padding-right: 20px !important;
+    /* padding-left: 25px !important; */
+    /* padding-right: 20px !important; */
 }
 
-#param2 {
+/* #param2 {
     width: 90px;
     height: 100%;
     text-align: center;
     padding-left: 10px !important;
     padding-right: 20px !important;
-}
+} */
 
 
 .progress-bar {
@@ -197,7 +216,7 @@ body {
     height: 40%;
     display: flex;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .choose-file {
@@ -263,26 +282,97 @@ body {
     background-color: green;
 }
 
-#percent {
+.percent {
     margin-left: 10px;
     width: 20px;
     text-align: left;
 }
 
-#run-btn {
-   min-width: 60px;
-   margin-left: 20px;
+.run-btn {
+   min-width: 60px !important;
+   margin-left: 20px !important;
 }
 
 .output-bar {
-    width: 100%;
-    height: 60%;
+    width: 90%;
+    height: 30%;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    margin-top: 20px;
+    flex-direction: row;
+    /* justify-content: center; */
+    margin-top: 10px;
+    padding-left: 10px;
+    font-size: 17px;
 }
 
 #btn-flash {
     margin-top:20px;
+}
+
+.mdui-tab {
+    position: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-start;
+    min-height: 20px !important;
+    max-height: 72px;
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    width:100% !important;
+}
+
+.mdui-tab a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: left;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-width: 72px;
+    min-height: 30px;
+    max-height: 72px;
+    padding: 12px;
+    overflow: hidden;
+    color: inherit;
+    font-size: 14px;
+    text-align: left;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    outline: 0;
+    cursor: pointer;
+    opacity: .7;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.mdui-container {
+    width: 100% !important;
+    height: 6%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-mode2{
+    max-width: 140px;
+    margin-left: 10px !important;
 }
