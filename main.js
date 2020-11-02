@@ -1,13 +1,16 @@
-const { app, BrowserWindow, Menu } = require('electron')
+const { app, BrowserWindow, Menu ,screen} = require('electron')
 const ipc = require('electron').ipcMain
 
 let win
 
 function createWindow () {
+    let size = screen.getPrimaryDisplay().workAreaSize
+    let width = parseInt(size.width *0.8 )
+    let height = parseInt(size.height * 0.8)
     // 创建浏览器窗口
     win = new BrowserWindow({
-        width: 1280,
-        height: 780,
+        width: 1080,
+        height: 680,
         webPreferences: {
             nodeIntegration: true
         },

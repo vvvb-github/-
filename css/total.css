@@ -23,7 +23,7 @@ body {
 }
 
 .btn-head {
-    width: 25px;
+    min-width: 36px !important;
     height: 25px;
 }
 
