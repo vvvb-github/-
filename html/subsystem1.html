@@ -10,6 +10,8 @@
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../js/subsystem1.js"></script>
     <script type="text/javascript" src="../js/total.js"></script>
+    <script type="text/javascript" src="../js/jquery.time.js"></script>
+    <script type="text/javascript" src="../js/input.js"></script>
 </head>
 <body>
 
@@ -38,21 +40,85 @@
         <div class="other-header"></div>
     </div>
     <div class='main-body'>
-        <div class="viewer">
-            <div class="viewer-body" id='box'>
-               
-            </div>
+        <div class="viewer1" >
+            <div id="pic-title"></div>
+            <div class="view-pic" id ="box">
+
+            </div>     
         </div>
         <div class="controller">
-            <div class="input-div mdui-shadow-5">输入参数
+                <div class="electronics mdui-shadow-5">
+                        <span class="ctr-title">高能电子观测 </span>
+                        <span class="sub-title"><b>观测日期：</b></span>
+                        <div class="electronics-parameter  mdui-shadow-2">
+                            <div class="electronics-choose-div">
+                                    <i class="mdui-icon material-icons timer">&#xe192;</i>
+                                    <select class="select-set sel_year" id="YYYY2" onchange=changeform()>
+                                        <!-- <option value="">请选择</option> -->
+                                    </select>
+                                    <span>年</span>
+                                    <select class="select-set1 sel_month" id="MM2" onchange=changeform()>
+                                        <!-- <option value="">1</option> -->
+                                    </select>
+                                    <span>月</span>
+                            </div>
+                            <div class="electronics-submit">
+                                <span id = 'dataenter2'></span>
+                                <button class="mdui-btn mdui-color-blue-100 soundWave-btn mdui-btn-raised" onclick="setTimeout(submitbtn2, 1000)"> 
+                                            submit
+                                </button>
+                            </div> 
+                        </div>
+
+                        <span class="sub-title"><b>结果显示：</b></span>
+                        <div class="electronics-output-bar">
+                            <button class="mdui-btn mdui-color-blue-100 mdui-btn-raised" id='btn-electronicsPlot' onclick=electronicsPlot()>plot</button>
+                        </div>
+                 </div>
+                       
+            <div class="soundWave mdui-shadow-5">
+                <span class="ctr-title">合声波观测 </span>
+                <span class="sub-title"><b>观测日期：</b></span>
+                <div class="soundWave-parameter  mdui-shadow-2">
+                    <div class="soundWave-choose-div">
+                            <i class="mdui-icon material-icons timer">&#xe192;</i>
+                            <select class="select-set sel_year" id="YYYY" onchange=changeform()>
+                                <!-- <option value="">请选择</option> -->
+                            </select>
+                            <span>年</span>
+                            <select class="select-set1 sel_month" id="MM" onchange=changeform()>
+                                <!-- <option value="">1</option> -->
+                            </select>
+                            <span>月</span>
+                            <select class="select-set1 sel_day" id="DD" onchange=changeform()>
+                                <!-- <option value="">1</option> -->
+                            </select>
+                            <span>日</span>
+                    </div>
+                    <div class="electronics-submit">
+                        <span id = 'dataenter'></span>
+                        <button class="mdui-btn mdui-color-blue-100 soundWave-btn mdui-btn-raised" onclick="setTimeout(submitbtn, 1000)"> 
+                                    submit
+                        </button>
+                    </div> 
+                </div>
+                <span class="sub-title"><b>结果显示：</b></span>
+                <div class="soundWave-output-bar">
+                   
+                    <button class="mdui-btn mdui-color-blue-100 mdui-btn-raised" id='btn-soundWavePlot' onclick=soundWavePlot()>plot</button>
+                </div>
+                <div class="soundWave-output-bar mode2-out">
+                    <button class="mdui-btn mdui-color-blue-100 btn-mode2 mdui-btn-raised" id='btn-starA' onclick=starA()>stereo-a星</button>
+                    <button class="mdui-btn mdui-color-blue-100 btn-mode2 mdui-btn-raised " id='btn-starB' onclick=starB()>stereo-b星</button>
+                </div>
             </div>
-            <div class="run-div mdui-shadow-5">程序运行部分
-            </div>
-            <div class="output-div mdui-shadow-5">
-            </div>  
+            
+            <!-- <div class="output-div mdui-shadow-5">
+            </div>   -->
         </div>
     </div>
     
 </div>
 </body>
 </html>
+
