@@ -17,4 +17,8 @@ $(function () {
     $('#minimize').click(()=>{
         ipc.send('Min')
     })
+
+    $('#maxbt').click(()=>{
+        ipc.send("Max")
+    })
 })

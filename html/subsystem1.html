@@ -19,6 +19,7 @@
     <span style="font-size: 15px;font-weight: bold;margin-left: 5px" class='drag'>辐射带高能电子通量预报技术及其应用</span>
     <div class="btn-head-div">
         <button class="mdui-btn mdui-btn-icon btn-head" id="minimize"><i class="mdui-icon material-icons">remove</i></button>
+        <button class="mdui-btn mdui-btn-icon btn-head" id="maxbt"><i class="mdui-icon material-icons">crop_square</i></button>
         <button class="mdui-btn mdui-btn-icon btn-head" id="close"><i class="mdui-icon material-icons">close</i></button>
     </div>
 </div>
@@ -71,9 +72,9 @@
                         </div>
 
                         <span class="sub-title"><b>结果显示：</b></span>
-                        <div class="electronics-output-bar">
+                        <!-- <div class="electronics-output-bar"> -->
                             <button class="mdui-btn mdui-color-blue-100 mdui-btn-raised" id='btn-electronicsPlot' onclick=electronicsPlot()>plot</button>
-                        </div>
+                        <!-- </div> -->
                  </div>
                        
             <div class="soundWave mdui-shadow-5">
@@ -103,17 +104,17 @@
                     </div> 
                 </div>
                 <span class="sub-title"><b>结果显示：</b></span>
-                <div class="soundWave-output-bar">
+                <!-- <div class="soundWave-output-bar"> -->
                    
                     <button class="mdui-btn mdui-color-blue-100 mdui-btn-raised" id='btn-soundWavePlot' onclick=soundWavePlot()>plot</button>
-                </div>
+                <!-- </div> -->
                 <div class="soundWave-output-bar mode2-out">
-                    <button class="mdui-btn mdui-color-blue-100 btn-mode2 mdui-btn-raised" id='btn-starA' onclick=starA()>stereo-a星</button>
-                    <button class="mdui-btn mdui-color-blue-100 btn-mode2 mdui-btn-raised " id='btn-starB' onclick=starB()>stereo-b星</button>
+                    <button class="mdui-btn mdui-color-blue-100 btn-mode3 mdui-btn-raised" id='btn-starA' onclick=starA()>Van Allen Probes-A星</button>
+                    <button class="mdui-btn mdui-color-blue-100 btn-mode3 mdui-btn-raised " id='btn-starB' onclick=starB()>Van Allen Probes-B星</button>
                 </div>
             </div>
             
-            <!-- <div class="output-div mdui-shadow-5">
+            <!-- <div class="output-div mdui-shadow-5">A
             </div>   -->
         </div>
     </div>

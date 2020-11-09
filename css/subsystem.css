@@ -31,7 +31,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:#e4e3e3 ;
+    background-color:white;
+    /* background-color:#e4e3e3 ; */
 }
 
 .main-body {
@@ -40,7 +41,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-color:#e4e3e3 ;
+    background-color:white;
+    /* background-color:#e4e3e3 ; */
 }
 
 .viewer {
@@ -409,12 +411,21 @@ body {
     height: 5% !important;
     display: flex;
     justify-content: flex-start;
+    margin-left: 0 !important;
 }
 
 .btn-mode2{
     max-width: 140px !important;
     font-size: 12px !important;
     margin-right: 10px !important;
+}
+
+.btn-mode3{
+    width: 50%!important;
+    font-size: 11px !important;
+    margin-right: 10px !important;
+    padding: 0 6px !important;
+    text-transform: none !important;
 }
 
 
@@ -465,10 +476,11 @@ label{
 
 .soundWave-parameter{
     margin-top: 2%;
+    margin-bottom: 4%;
     width: 90%;
     height: 30%;
     display: flex;
-    align-items: flex-end;
+    /* align-items: flex-end; */
     justify-content: flex-start;
     background-color: white;
     flex-direction: column;
@@ -528,7 +540,7 @@ label{
     align-items: center;
     /* margin-left: 10px; */
     margin: 10px 10px;
-    /* justify-content: flex-start; */
+    justify-content: flex-start;
     /* border:2px solid rgb(68, 123, 177) */
 }
 
@@ -539,13 +551,13 @@ label{
  }
 
  .soundWave-output-bar{
-    width: 90%;
+    width: 95%;
     height: 15%;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: flex-start;
-    margin-left: 10%;
+    margin-left: 5%;
     margin-bottom: 4%;
  }
 
@@ -632,15 +644,20 @@ label{
 }
 
 #btn-electronicsPlot{
-    margin-top: -55px;
-    margin-left: 30%;
+    margin-top: -25px;
+    /* margin-left: 30%; */
 }
 
 #btn-soundWavePlot{
-    margin-top:10px ;
+    margin-top: -25px;
+    margin-bottom: 6%;
 }
 
 .timer{
     margin-left: 2px;
     margin-right: 5px;
+}
+
+#data-miss{
+    margin-top:40%;
 }

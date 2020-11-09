@@ -62,3 +62,7 @@ body {
     width: 95%;
     -webkit-app-region: drag;
 }
+
+.mdui-icon, .mdui-icon::before {
+    font-size: 22px !important;
+}

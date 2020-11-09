@@ -22,7 +22,7 @@ function createWindow () {
     win.loadFile('html/index.html')
 
     // 打开开发者工具
-    win.webContents.openDevTools()
+    // win.webContents.openDevTools()
 }
 
 // Electron会在初始化完成并且准备好创建浏览器窗口时调用这个方法
@@ -67,6 +67,17 @@ ipc.on('Exit', ()=>{
 
 ipc.on('Min', ()=>{
     win.minimize()
+})
+
+var is_max = 0;
+ipc.on('Max', ()=>{
+    if(is_max==1){
+        win.unmaximize();
+        is_max=0;
+    }else{
+       win.maximize(); 
+       is_max=1;
+    }
 })
 
 // 修改菜单栏

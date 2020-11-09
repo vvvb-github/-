@@ -55,7 +55,7 @@ function electronicsPlot(){
         $("#pic-title").html("2013年5月高能电子观测图");
     }
     else{
-        $("#box").html("<h3>没有数据</h3>");
+        $("#box").html("<h3 id='data-miss'>数据缺失</h3>");
     }
 }
 
@@ -64,16 +64,13 @@ function starA(){
     var res2 = $("#MM").find("option:selected").text();
     var res3 = $("#DD").find("option:selected").text();
     
-    console.log(res1)
-    console.log(res2)
-    console.log(res3)
     if(res1=="2012" && res2=="9" && res3=="2"){
         $('#box').html("<img class='plot-img2' src='../assets/SVD_20120902_a.jpg' id='starA'></img>");
         new Rotate().init("starA").RotateWheel();
-        $("#pic-title").html("2012年9月2日 STEREO-A星合声波观测图");
+        $("#pic-title").html("2012年9月2日 Van Allen Probes-A星合声波观测图");
     }
     else{
-        $("#box").html("<h3>没有数据</h3>");
+        $("#box").html("<h3 id='data-miss'>数据缺失</h3>");
     }
 }
 
@@ -83,16 +80,16 @@ function starB(){
     var res2 = $("#MM").find("option:selected").text();
     var res3 = $("#DD").find("option:selected").text();
     
-    console.log(res1)
-    console.log(res2)
-    console.log(res3)
+    // console.log(res1)
+    // console.log(res2)
+    // console.log(res3)
     if(res1=="2012" && res2=="9" && res3=="2"){
-        $("#box").html("<img class='plot-img2' src='../assets/soundWave_201305.jpg' id='soundWaveImg'></img>")
+        $("#box").html("<img class='plot-img2' src='../assets/SVD_20120902_b.jpg' id='soundWaveImg'></img>")
         new Rotate().init("soundWaveImg").RotateWheel();
-        $("#pic-title").html("2012年9月2日 STEREO-B星合声波观测图");
+        $("#pic-title").html("2012年9月2日 Van Allen Probes-B星合声波观测图");
     }
     else{
-        $("#box").html("<h3>没有图片</h3>");B
+        $("#box").html("<h3>数据缺失</h3>");B
     }
 }
 
@@ -111,27 +108,33 @@ class Rotate {
     RotateWheel() {
 
         document.onwheel = (e) => {
-            let delta = (e.wheelDelta && (e.wheelDelta > 0 ? 1 : -1))
-
-            if (delta > 0) {//放大
-                // 向上滚
-                let oWidth = this.el.offsetWidth;//取得图片的实际宽度
-                let oHeight = this.el.offsetHeight; //取得图片的实际高度
-
-                this.el.style.width = (oWidth + 50) + "px"
-                this.el.style.height = (oHeight + 50 / oWidth * oHeight) + "px"
-
-            } else if (delta < 0) {//缩小
-                //向下滚
-                let oWidth = this.el.offsetWidth; //取得图片的实际宽度
-                let oHeight = this.el.offsetHeight; //取得图片的实际高度
-                if (this.el.offsetWidth > 100 || this.el.offsetHeight > 75) {//判断如果图片缩小到原图大小就停止缩小(100和75分别为原图的宽高)
-
-                    this.el.style.width = oWidth - 50 + "px"
-                    this.el.style.height = oHeight - 50 / oWidth * oHeight + "px"
+            var obj = document.getElementById("box");
+            let delta = (e.wheelDelta && (e.wheelDelta > 0 ? 1 : -1));
+            // console.log(this.el.offsetWidth)
+            // console.log(this.el.offsetHeight)
+            // console.log(obj.offsetWidth)
+            // console.log(obj.offsetHeight)
+                if (delta > 0) {//放大
+                    // 向上滚
+                
+                    if(this.el.offsetWidth < obj.offsetWidth && this.el.offsetHeight < obj.offsetHeight){
+                    let oWidth = this.el.offsetWidth;//取得图片的实际宽度
+                    let oHeight = this.el.offsetHeight; //取得图片的实际高度
+    
+                    this.el.style.width = (oWidth + 10) + "px"
+                    this.el.style.height = (oHeight + 10 / oWidth * oHeight) + "px"
+                    }
+                } else if (delta < 0) {//缩小
+                    //向下滚
+                    let oWidth = this.el.offsetWidth; //取得图片的实际宽度
+                    let oHeight = this.el.offsetHeight; //取得图片的实际高度
+                    if (this.el.offsetWidth > 100 || this.el.offsetHeight > 75) {//判断如果图片缩小到原图大小就停止缩小(100和75分别为原图的宽高)
+    
+                        this.el.style.width = oWidth - 10 + "px"
+                        this.el.style.height = oHeight - 10 / oWidth * oHeight + "px"
+                    }
                 }
             }
-        }
     }
 
 
