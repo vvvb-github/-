@@ -89,7 +89,7 @@ function starB(){
         $("#pic-title").html("2012年9月2日 Van Allen Probes-B星合声波观测图");
     }
     else{
-        $("#box").html("<h3>数据缺失</h3>");B
+        $("#box").html("<h3 id='data-miss'>数据缺失</h3>");B
     }
 }
 

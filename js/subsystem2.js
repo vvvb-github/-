@@ -3,7 +3,7 @@ $(function () {
         window.location.href = 'subpage.html'
     })
     $('#btn-plot22').click(()=>{
-        $('#box2').html("<img class='plot-img2' src='../assets/2_raypath-d-eta-XY.jpg' id='img'></img>")
+        $('#box2').html("<img class='plot-img1' src='../assets/2_raypath-d-eta-XY.jpg' id='img'></img>")
         new Rotate().init("img").RotateWheel()
     })
     $('#btn-plot23').click(()=>{
