@@ -17,37 +17,47 @@
     
        // 初始化
        var str = "<option value=\"" + FirstValue + "\">"+FirstText+"</option>";
-       $YearSelector.html("<option value=\"2020\">2020</option>");
-       $MonthSelector.html(str);
-       $DaySelector.html(str);
+       $YearSelector.html("<option value=\"2019\">2019</option>");
+     //   $MonthSelector.html(str);
+     //   $DaySelector.html(str);
     
        // 年份列表
        var yearNow = new Date().getFullYear();
        var yearSel = $YearSelector.attr("rel");
-       for (var i = yearNow-1; i >= 2012; i--) {
+       for (var i = yearNow-2; i >= 2012; i--) {
             var sed = yearSel==i?"selected":"";
             var yearStr = "<option value=\"" + i + "\" " + sed+">"+i+"</option>";
             $YearSelector.append(yearStr);
        }
     
         // 月份列表
-        var monthSel = $MonthSelector.attr("rel");
-        for (var i = 2; i <= 12; i++) {
-            var sed = monthSel==i?"selected":"";
-            var monthStr = "<option value=\"" + i + "\" "+sed+">"+i+"</option>";
-            $MonthSelector.append(monthStr);
+        function BuildMonth() {
+          $MonthSelector.html("");
+          var year = parseInt($YearSelector.val());
+          var monthcount =12
+          var monlow = 1
+          if(year == 2019){monthcount =7}
+          if(year == 2012){monlow = 9}
+          var monthSel = $MonthSelector.attr("rel");
+          console.log(monthSel)
+          for (var i = monlow; i <= monthcount; i++) {
+              var sed = monthSel==i?"selected":"";
+              var monthStr = "<option value=\"" + i + "\" "+sed+">"+i+"</option>";
+              $MonthSelector.append(monthStr);
+          }
         }
-    
+        
         // 日列表(仅当选择了年月)
         function BuildDay() {
             // if ($YearSelector.val() == 0 || $MonthSelector.val() == 0) {
             //     // 未选择年份或者月份
             //     // $DaySelector.html(str);
             // } else {
-                $DaySelector.html(str);
+                $DaySelector.html("");
                 var year = parseInt($YearSelector.val());
                 var month = parseInt($MonthSelector.val());
                 var dayCount = 0;
+                var daylow = 1;
                 switch (month) {
                      case 1:
                      case 3:
@@ -73,9 +83,10 @@
                      default:
                           break;
                 }
-                        
+                if(year == 2019 && month ==7 ){dayCount = 8}
+                if(year == 2012 && month == 9){console.log("sss"); daylow = 8;}     
                 var daySel = $DaySelector.attr("rel");
-                for (var i = 2; i <= dayCount; i++) {
+                for (var i = daylow; i <= dayCount; i++) {
                     var sed = daySel==i?"selected":"";
                     var dayStr = "<option value=\"" + i + "\" "+sed+">" + i + "</option>";
                     $DaySelector.append(dayStr);
@@ -86,8 +97,12 @@
              BuildDay();
           });
           $YearSelector.change(function () {
-             BuildDay();
+             BuildMonth();
+             BuildDay();  
           });
+          if($MonthSelector.attr("rel")!=""){
+               BuildMonth();
+            }
           if($DaySelector.attr("rel")!=""){
              BuildDay();
           }

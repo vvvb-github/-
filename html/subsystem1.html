@@ -12,6 +12,7 @@
     <script type="text/javascript" src="../js/total.js"></script>
     <script type="text/javascript" src="../js/jquery.time.js"></script>
     <script type="text/javascript" src="../js/input.js"></script>
+   
 </head>
 <body>
 
@@ -44,7 +45,7 @@
         <div class="viewer1" >
             <div id="pic-title"></div>
             <div class="view-pic" id ="box">
-
+                <!-- <img class='plot-img2' src="D:/20120908-20190708/Wave_rbspAB_20180101.tif" /> -->
             </div>     
         </div>
         <div class="controller">
@@ -54,11 +55,11 @@
                         <div class="electronics-parameter  mdui-shadow-2">
                             <div class="electronics-choose-div">
                                     <i class="mdui-icon material-icons timer">&#xe192;</i>
-                                    <select class="select-set sel_year" id="YYYY2" onchange=changeform()>
+                                    <select class="select-set" id="YYYY2" onchange=changeform()>
                                         <!-- <option value="">请选择</option> -->
                                     </select>
                                     <span>年</span>
-                                    <select class="select-set1 sel_month" id="MM2" onchange=changeform()>
+                                    <select class="select-set1" id="MM2" onchange=changeform()>
                                         <!-- <option value="">1</option> -->
                                     </select>
                                     <span>月</span>
@@ -109,8 +110,8 @@
                     <button class="mdui-btn mdui-color-blue-100 mdui-btn-raised" id='btn-soundWavePlot' onclick=soundWavePlot()>plot</button>
                 <!-- </div> -->
                 <div class="soundWave-output-bar mode2-out">
-                    <button class="mdui-btn mdui-color-blue-100 btn-mode3 mdui-btn-raised" id='btn-starA' onclick=starA()>Van Allen Probes-A星</button>
-                    <button class="mdui-btn mdui-color-blue-100 btn-mode3 mdui-btn-raised " id='btn-starB' onclick=starB()>Van Allen Probes-B星</button>
+                    <button class="mdui-btn mdui-color-blue-100 btn-mode3 mdui-btn-raised" id='btn-starA' onclick=starA()>Van Allen Probes-A星&B星</button>
+                    <!-- <button class="mdui-btn mdui-color-blue-100 btn-mode3 mdui-btn-raised " id='btn-starB' onclick=starB()>Van Allen Probes-B星</button> -->
                 </div>
             </div>
             
