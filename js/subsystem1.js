@@ -50,11 +50,11 @@ function changeform(){
 
 function setYM(){
      // 年份列表
-     var yearNow = new Date().getFullYear();
+     var yearNow = 2019;
     //  var yearSel = $YearSelector.attr("rel");
      $("#YYYY2").append("<option value='2019'>2019</option>");
-     console.log(yearNow)
-     for (var i = yearNow-2; i >= 2012; i--) {
+    //  console.log(yearNow)
+     for (var i = 2018; i >= 2012; i--) {
         //   var sed = yearSel==i?"selected":"";
           var yearStr = "<option value=\"" + i + "\">"+i+"</option>";
           $("#YYYY2").append(yearStr);
@@ -92,7 +92,7 @@ function electronicsPlot(){
     let res_y = parseInt($("#YYYY2").find("option:selected").text());
     let res_m = parseInt($("#MM2").find("option:selected").text());
 
-    photoname = '../assets/201209-201907/electron_flux-'+res_y+'-'+res_m+'.jpg';
+    photoname = 'D:/201209-201907/electron_flux-'+res_y+'-'+res_m+'.jpg';
     // photoname = '../assets/201209-201907/electron_flux-'+res_y+'-'+res_m+'.jpg';
     imgshow ="<img class='plot-img2' src=" + photoname+" Sid='soundWaveImg'></img>"
 
@@ -114,7 +114,7 @@ function starA(){
     if(res2<10){ res2 = "0"+res2;}
     if(res3<10){ res3 = "0"+res3;}
     
-    photoname = '../assets/20120908-20190708/Wave_rbspAB_'+res1+res2+res3+'.jpg'
+    photoname = 'D:/20120908-20190708/Wave_rbspAB_'+res1+res2+res3+'.jpg'
     // console.log(photoname)
     // photoname = '../assets/201209-201907/electron_flux-'+res_y+'-'+res_m+'.jpg';
     imgshow ="<img class='plot-img2' src=" + photoname+" Sid='soundWaveImg'></img>"

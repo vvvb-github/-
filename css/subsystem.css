@@ -669,3 +669,89 @@ label{
     margin-top:40%;
     color:red;
 }
+
+
+.mode3-electronics{
+    margin-top:1%;
+    margin-bottom: 3%;
+    width: 95%;
+    height: 22.5%;
+    background-color: rgb(232, 242, 252);
+    /* border:2px solid rgb(68, 123, 177); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mode31-div {
+    display: flex;
+    width: 90%;
+    justify-content: flex-start;
+    margin-top:3%;
+
+}
+
+.mode31-out {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    margin-top:3%;
+
+}
+
+.sub-title3 {
+    margin-top: 4%;
+    /* padding-left: 5%; */
+    width: 100px;
+    /* text-align: center; */
+    font-size: 16px;
+    /* align-items: center; */
+}
+
+#time-list {
+    margin-top: 2.5%;
+    height: 22px;
+    width:180px;
+}
+
+.btn-mode31 {
+    max-width: 140px !important;
+    font-size: 12px !important;
+    margin-right: 10px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    margin-top: 1% !important;
+}
+
+#mode32-div {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    margin-top:6%;
+
+}
+
+.btn-mode32 {
+    max-width: 140px !important;
+    font-size: 12px !important;
+    margin-right: 10px !important;
+    margin-left: 20px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    margin-top: -2% !important;
+}
+
+#L-value {
+    width: 40px;
+    height: 20px;
+    margin-right: 5%;
+    margin-top: -2%;
+}
+
+
+#L-title {
+    padding-left: 5%;
+    width: 20px;
+    /* text-align: center; */
+    font-size: 16px;
+}
