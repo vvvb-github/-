@@ -3,6 +3,8 @@ const ipc = require('electron').ipcMain
 
 let win
 
+
+
 function createWindow () {
     let size = screen.getPrimaryDisplay().workAreaSize
     let width = parseInt(size.width *0.8 )
@@ -12,17 +14,28 @@ function createWindow () {
         width: 1080,
         height: 680,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            enableRemoteModule: true,  //选择使用remote模块
+            nodeIntegrationInWorker: true
+            // worldSafeExecuteJavaScript: true,
+            // contextIsolation: true
         },
         resizable: false,
-        frame: false
+        frame: false,
+        
     })
 
     // 并且为你的应用加载index.html
     win.loadFile('html/index.html')
 
     // 打开开发者工具
-    win.webContents.openDevTools()
+    // win.webContents.openDevTools()
+
+    // win.loadURL(url.format({
+    //     pathname:path.join(__dirname,'help.html'),
+    //     protocol:'file:',
+    //     slashes:true
+    // }))
 }
 
 // Electron会在初始化完成并且准备好创建浏览器窗口时调用这个方法
@@ -79,6 +92,15 @@ ipc.on('Max', ()=>{
        is_max=1;
     }
 })
+
+// ipc.on("openDir", (event)=>{
+//     console.log("ddd")
+//     var fileName = dialog.showOpenDialog(win, {title: "选择一个目录", properties: ["openDirectory"]});
+//     // alert(fileName)
+//     console.log(fileName)
+//     // e.returnValue = fileName ? fileName : null;
+
+// });
 
 // 修改菜单栏
 Menu.setApplicationMenu(null)

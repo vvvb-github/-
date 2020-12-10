@@ -43,12 +43,14 @@ body {
 }
 
 .menu-btn {
-    width: 25px;
-    height: 100% !important;
-    line-height: 25px !important;
-    margin-left: 2px;
-    min-width: 50px !important;
-    font-size: 15px !important;
+       /* width: 50px; */
+       height: 100% !important;
+       line-height: 22px !important;
+       margin-left: 2px;
+       min-width: 20px !important;
+       font-size: 15px !important;
+       letter-spacing: 0 !important;
+       padding: 0 6px !important;
 }
 
 .stroke { text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0; }

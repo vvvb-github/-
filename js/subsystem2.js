@@ -267,7 +267,7 @@ function bar(){
         }
         $('.percent').html(String(progress)+'%');
         $('.bar').width(String(progress) + '%');
-    }, 10);
+    }, 30);
 }
 
 

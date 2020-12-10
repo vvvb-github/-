@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../mdui/css/mdui.min.css">
     <script type="text/javascript" src="../mdui/js/mdui.min.js"></script>
     <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/subsystem1.js"></script>
+    <script type="text/javascript" src="../js/subsystem3.js"></script>
     <script type="text/javascript" src="../js/total.js"></script>
     <script type="text/javascript" src="../js/jquery.time.js"></script>
     <script type="text/javascript" src="../js/input.js"></script>
@@ -27,6 +27,9 @@
 
 <div class="menu">
     <button class="mdui-btn mdui-color-grey-300 menu-btn" id="menu-index"><span class="menu-text">首页</span></button>
+    <button class="mdui-btn mdui-color-grey-300 menu-btn" id="mode1-index"><span class="menu-text">高能电子和合声波观测</span></button>
+    <button class="mdui-btn mdui-color-grey-300 menu-btn" id="mode2-index"><span class="menu-text">合声波传播特征分析</span></button>
+    <button class="mdui-btn mdui-color-grey-300 menu-btn" id="mode3-index"><span class="menu-text">高能电子通量模拟预测</span></button>
     <button class="mdui-btn mdui-color-grey-300 menu-btn" id="menu-help"><span class="menu-text">帮助</span></button>
 </div>
 
@@ -43,7 +46,7 @@
     </div>
     <div class='main-body'>
         <div class="viewer1" >
-            <div id="pic-title"></div>
+            <div id="pic-title1"></div>
             <div class="view-pic" id ="box">
                 <!-- <img class='plot-img2' src="D:/20120908-20190708/Wave_rbspAB_20180101.tif" /> -->
             </div>     
@@ -53,41 +56,43 @@
                     <span class="ctr-title">时间模块 </span>
                     <div id="mode31-div">
                         <span class="sub-title3"><b>观测日期：</b></span>
-                    <input type="text" name="timelist" list="timelist" maxlength="20" id="time-list" placeholder="请键入/选择日期"> 
+                    <input type="text" name="timelist" list="timelist" maxlength="20" id="time-list" placeholder="请键入/选择日期" onchange=changebox()> 
                     <datalist id="timelist" style="display:none;">
-                        <option value="2016年2月16日">2016年02月16日</option>
-                        <option value="2016年3月7日">2016年03月07日</option>
-                        <option value="2016年4月13日">2016年04月13日</option>
-                        <option value="2016年5月8日">2016年05月08日</option>
-                        <option value="2016年5月30日">2016年05月30日</option>
-                        <option value="2017年11月7日">2017年11月07日</option>
-                        <option value="2018年3月14日">2018年03月14日</option>
-                        <option value="2018年5月5日">2018年05月05日</option>
-                        <option value="2018年8月26日">2018年08月26日</option>
+                        <option value="2016年02月18日">2016年02月18日</option>
+                        <option value="2016年03月07日">2016年03月07日</option>
+                        <option value="2016年04月13日">2016年04月13日</option>
+                        <option value="2016年05月08日">2016年05月08日</option>
+                        <option value="2016年05月30日">2016年05月30日</option>
+                        <option value="2017年11月07日">2017年11月07日</option>
+                        <option value="2018年03月14日">2018年03月14日</option>
+                        <option value="2018年05月05日">2018年05月05日</option>
+                        <option value="2018年08月26日">2018年08月26日</option>
                     </datalist>
                     </div>
                     <div class="mode31-out">
-                    <button class="mdui-btn mdui-color-blue-100 btn-mode31 mdui-btn-raised" id='btn-plot21' onclick=plot2()>合声波观测图</button>
-                    <button class="mdui-btn mdui-color-blue-100 btn-mode31 mdui-btn-raised " id='btn-plot22'>空间天气观测图</button>
+                    <button class="mdui-btn mdui-color-blue-100 btn-mode31 mdui-btn-raised" id='btn-plot21' onclick={btn_he()}>合声波观测图</button>
+                    <button class="mdui-btn mdui-color-blue-100 btn-mode31 mdui-btn-raised " id='btn-plot22' onclick=btn_kong()>空间天气观测图</button>
                     </div>
              </div>
                        
             <div class="mode3-electronics mdui-shadow-5">
                 <span class="ctr-title">波谱拟合模块 </span>
                 <div id="mode32-div">
-                    <button class="btn-mode32 mdui-btn mdui-color-blue-100  mdui-btn-raised " id='btn-plot22'>波谱拟合</button>
-                    <div class="bar-outline">
-                        <div class="bar-border">
-                            <div class="bar-slider bar"></div>
+                    <button class="btn-mode32 mdui-btn mdui-color-blue-300  mdui-btn-raised " id='btn-plot22' onclick={bar(1)}>波谱拟合</button>
+                    <div class="bar-outline1">
+                        <div class="bar-border1">
+                            <div class="bar-slider1 bar" id='bar1'></div>
                         </div>
                     </div>
-                    <span class="percent">0%</span>
+                    <span class="percent1" id="percent11">0%</span>
                     
                 </div>
                 <div id="mode32-div">
-                    <button class="btn-mode32 mdui-btn mdui-color-blue-100  mdui-btn-raised " id='btn-plot22'>结果显示与保存</button>
+                    
                     <span id="L-title">L：</span>
                     <input type="text" maxlength="5" id="L-value"> 
+                    <button class="btn-mode34 mdui-btn mdui-color-blue-100  mdui-btn-raised " id='btn-plot22'  onclick=btn_31()>结果展示</button>
+                    <button class="btn-mode34 mdui-btn mdui-color-blue-100  mdui-btn-raised " onclick=btn_save1()>结果保存</button>
                   
                 </div>
             </div>
@@ -95,35 +100,39 @@
             <div class="mode3-electronics mdui-shadow-5">
                 <span class="ctr-title">扩散系数计算模块 </span>
                 <div id="mode32-div">
-                        <button class="btn-mode32 mdui-btn mdui-color-blue-100  mdui-btn-raised " id='btn-plot22'>扩散系数计算</button>
-                        <div class="bar-outline">
-                            <div class="bar-border">
-                                <div class="bar-slider bar"></div>
+                        <button class="btn-mode32 mdui-btn mdui-color-blue-300  mdui-btn-raised " id='btn-plot22' onclick={bar(2)}>扩散系数计算</button>
+                        <div class="bar-outline1">
+                            <div class="bar-border1">
+                                <div class="bar-slider1 bar" id='bar2'></div>
                             </div>
                         </div>
-                        <span class="percent">0%</span>
+                        <span class="percent1" id="percent12">0%</span>
                         
                     </div>
                     <div id="mode32-div">
-                        <button class="btn-mode32 mdui-btn mdui-color-blue-100  mdui-btn-raised " id='btn-plot22'>结果显示与保存</button>
+                        <span style="width:10px" ></span>
+                        <button class="btn-mode34 mdui-btn mdui-color-blue-100  mdui-btn-raised " id='btn-plot22' onclick=btn_32()>结果展示</button>
+                        <button class="btn-mode34 mdui-btn mdui-color-blue-100  mdui-btn-raised " id='btn-plot22' onclick=btn_save2()>结果保存</button>
                     </div>
             </div>
 
             <div class="mode3-electronics mdui-shadow-5">
                 <span class="ctr-title">电子通量预测模块 </span>
-                <span class="ctr-title">扩散系数计算模块 </span>
+    
                 <div id="mode32-div">
-                        <button class="btn-mode32 mdui-btn mdui-color-blue-100  mdui-btn-raised " id='btn-plot22'>电子通量预测</button>
-                        <div class="bar-outline">
-                            <div class="bar-border">
-                                <div class="bar-slider bar"></div>
+                        <button class="btn-mode32 mdui-btn mdui-color-blue-300  mdui-btn-raised " id='btn-plot22' onclick={bar(3)}>电子通量预测</button>
+                        <div class="bar-outline1">
+                            <div class="bar-border1">
+                                <div class="bar-slider bar" id='bar3'></div>
                             </div>
                         </div>
-                        <span class="percent">0%</span>
+                        <span class="percent1" id="percent13">0%</span>
                         
                     </div>
                     <div id="mode32-div">
-                        <button class="btn-mode32 mdui-btn mdui-color-blue-100  mdui-btn-raised " id='btn-plot22'>结果显示与保存</button>
+                            <span style="width:10px" ></span>
+                        <button class="btn-mode34 mdui-btn mdui-color-blue-100  mdui-btn-raised " id='btn-plot22' onclick=btn_33()>结果展示</button>
+                        <button class="btn-mode34 mdui-btn mdui-color-blue-100  mdui-btn-raised " id='btn-plot22' onclick=btn_save3()>结果保存</button>
                     </div>
                 
         </div>
